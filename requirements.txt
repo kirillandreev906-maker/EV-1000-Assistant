@@ -1,0 +1,8 @@
+python-telegram-bot
+python-dotenv
+requests
+pandas
+numpy
+scipy
+sqlalchemy
+apscheduler

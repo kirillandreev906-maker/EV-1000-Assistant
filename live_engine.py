@@ -1,0 +1,1 @@
+def live(): return 'WAITING'
