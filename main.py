@@ -13,6 +13,8 @@ from handlers.report import report
 from handlers.history import history
 from handlers.menu import menu
 from handlers.callbacks import button_router
+from handlers.admin_wizard import build_admin_conversation
+from handlers.match_callback import match_callback
 from handlers.top import top
 from handlers.quality import quality
 from handlers.admin import (
@@ -57,6 +59,8 @@ def build_application():
     app.add_handler(CommandHandler("setbank", set_bank))
 
 
+    app.add_handler(build_admin_conversation())
+    app.add_handler(CallbackQueryHandler(match_callback, pattern=r"^match:\\d+$"))
     app.add_handler(CallbackQueryHandler(button_router))
 
     register_ready_notifier(app)
